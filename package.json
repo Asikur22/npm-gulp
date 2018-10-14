@@ -1,7 +1,7 @@
 {
-  "name": "html-boiler-plate-2",
+  "name": "npm-gulp",
   "version": "1.0.0",
-  "description": "HTML Boiler Plate 2",
+  "description": "HTML Boiler Plate with npm, gulp, browser-sync",
   "main": "gulpfile.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -36,6 +36,6 @@
     "normalize-url": "^1.5.1",
     "run-sequence": "^1.1.5"
   },
-  "author": "Kazal Kumar",
+  "author": "Asiqur Rahman",
   "license": "MIT"
 }
