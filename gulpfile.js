@@ -32,6 +32,18 @@ var path = {
 };
 
 // tasks
+gulp.task('browserSync', function () {
+    browserSync.init({
+        server: {
+            baseDir: './'
+        },
+    });
+
+    gulp.watch("*.html", function () {
+        browserSync.reload();
+    });
+});
+
 gulp.task('styles', function() {
     return gulp.src([
             './build/styles/plugins/*.css',
@@ -60,7 +72,9 @@ gulp.task('styles', function() {
 
         .pipe(gulpif(development, sourcemaps.write('.')))
         .pipe(gulp.dest(path.dist.styles))
-        .pipe(browserSync.stream());
+        .pipe(browserSync.reload({
+            stream: true
+        }))
 });
 
 // process scripts from build script's plugin folder
@@ -80,7 +94,9 @@ gulp.task('plugin-scripts', function() {
         }))
         .pipe(gulpif(development, sourcemaps.write('.')))
         .pipe(gulp.dest(path.dist.scripts))
-        .pipe(browserSync.stream());
+        .pipe(browserSync.reload({
+            stream: true
+        }))
 });
 
 // process custom script file
@@ -102,7 +118,9 @@ gulp.task('custom-scripts', function() {
         }))
         .pipe(gulpif(development, sourcemaps.write('.')))
         .pipe(gulp.dest(path.dist.scripts))
-        .pipe(browserSync.stream());
+        .pipe(browserSync.reload({
+            stream: true
+        }))
 });
 
 gulp.task('scripts', function(callback) {
@@ -113,7 +131,9 @@ gulp.task('fonts', function() {
     return gulp.src(['./build/fonts/**'])
         .pipe(flatten())
         .pipe(gulp.dest(path.dist.fonts))
-        .pipe(browserSync.stream());
+        .pipe(browserSync.reload({
+            stream: true
+        }))
 });
 
 gulp.task('images', function() {
@@ -124,10 +144,12 @@ gulp.task('images', function() {
             svgoPlugins: [{ removeUnknownsAndDefaults: false }, { cleanupIDs: false }]
         }))
         .pipe(gulp.dest(path.dist.images))
-        .pipe(browserSync.stream());
+        .pipe(browserSync.reload({
+            stream: true
+        }))
 });
 
-gulp.task('watch', ['browserSync'], function() {
+gulp.task('watch', ['browserSync', 'styles'], function () {
     gulp.watch(['./build/styles/**/**'], ['styles']);
     gulp.watch(['./build/scripts/plugins/**/**'], ['plugin-scripts']);
     gulp.watch(['./build/scripts/scripts.js'], ['custom-scripts']);
@@ -147,23 +169,4 @@ gulp.task('clean', require('del').bind(null, [distPath]));
 
 gulp.task('default', ['clean'], function() {
     gulp.start('build');
-
-    // Serve files from the root of this project
-    browserSync.init({
-        server: {
-            baseDir: "./"
-        }
-    });
-});
-
-gulp.task('browserSync', function() {
-    browserSync.init({
-        server: {
-            baseDir: './'
-        },
-    });
-
-    gulp.watch("*.html", function () {
-        browserSync.reload();
-    });
 });
