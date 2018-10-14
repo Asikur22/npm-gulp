@@ -1,0 +1,64 @@
+/* -------------------------------------
+ * common
+/* ------------------------------------- */
+body {
+    background-color: $light;
+}
+
+html,
+body,
+ol,
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    color: inherit;
+}
+
+a,
+a:link,
+a:visited,
+a:hover,
+a:active,
+button,
+button:focus,
+button:active,
+button:hover {
+    text-decoration: none;
+    outline: 0;
+}
+
+::selection {
+    // background: $purple;
+    // color: $light;
+}
+
+
+hr {
+    // border-top: 1px solid $border;
+}
+
+img {
+    max-width: 100%;
+}
+
+ul > li {
+    list-style: none;
+}
+
+iframe {
+    width: 100%;
+    border: none;
+}
+
+.disabled {
+    pointer-events: none;
+    cursor: default;
+}
+
+select:-moz-focusring {
+    color: transparent;
+    text-shadow: 0 0 0 $black;
+}

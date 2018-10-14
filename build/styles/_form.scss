@@ -1,0 +1,60 @@
+/* -------------------------------------
+ * form
+/* ------------------------------------- */
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="search"],
+input[type="url"],
+input[type="tel"],
+input[type="number"],
+input[type="date"],
+input[type="week"],
+input[type="time"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="color"],
+select,
+textarea,
+.form-control {
+    // border-color: $border;
+    border-width: 1px;
+    border-style: solid;
+    height: 40px;
+    border-radius: 4px;
+    box-shadow: none;
+	color: $black;
+    font-size: 14px;
+    appearance: none;
+	&:focus {
+        border-color: $black;
+        outline: 0;
+        box-shadow: none;
+	}
+}
+
+.form-control {
+    padding: 6px 15px;
+}
+
+select::-ms-expand{
+    display:none;
+}
+
+textarea {
+    resize: vertical;
+}
+
+// placehold colors
+.form-control::-webkit-input-placeholder {
+//    color: lighten($black,40%);
+}
+.form-control::-moz-placeholder {
+//    color: lighten($black,40%);
+}
+.form-control:-ms-input-placeholder {
+//    color: lighten($black,40%);
+}
+.form-control:-moz-placeholder {
+//    color: lighten($black,40%);
+}

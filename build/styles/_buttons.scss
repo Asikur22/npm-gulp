@@ -1,0 +1,70 @@
+/* -------------------------------------
+ * buttons
+/* ------------------------------------- */
+.btn-demo {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    text-transform: capitalize;
+    padding: 10px 25px;
+    border-radius: 4px;
+    display: inline-block;
+    text-align: center;
+    color: $light;
+    transition: all .2s ease-in;
+    &:hover,
+    &:focus,
+    &:active:focus,
+    &.active:focus,
+    &.focus,
+    &:active.focus,
+    &.active.focus {
+        outline: none;
+        color: $light;
+        box-shadow: none;
+    }
+
+    &.btn-xlg {
+        
+    }
+    &.btn-lg {
+        
+    }
+    &.btn-md {
+        
+    }
+    &.btn-sm {
+        
+    }
+    &.btn-xs {
+        
+    }
+    &.btn-xxs {
+        
+    }
+
+    &.btn-trans {
+
+    }
+    &.btn-icon {
+        > i {
+
+        }
+    }
+
+    &.btn-disabled {
+        @include opacity(0.4);
+        pointer-events: none;
+    }
+}
+
+.btn-demo {
+    // background-color: $demo;
+    // border: 1px solid $demo;
+    &:hover,
+    &:focus,
+    &:active {
+        // background-color: $demo-dark;
+        // border: 1px solid $demo-dark;
+    }
+}

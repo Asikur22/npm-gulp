@@ -1,0 +1,29 @@
+.idea
+node_modules
+.vscode
+main.min.css.map
+plugins.min.js.map
+scripts.min.js.map
+.DS_Store
+.AppleDouble
+.LSOverride
+package-lock.json
+
+
+# Thumbnails
+._*
+
+# Files that might appear in the root of a volume
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+
+# Directories potentially created on remote AFP share
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+terminal.glue
