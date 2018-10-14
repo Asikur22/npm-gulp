@@ -1,4 +1,7 @@
 # Installion Command
-<code>npm install</code><br>
-<code>gulp</code><br>
-<code>gulp watch</code>
+<ol>
+  <li><code>npm install</code></li>
+  <li><code>gulp</code></li>
+  <li><code>gulp watch</code></li>
+</ol>
+  
